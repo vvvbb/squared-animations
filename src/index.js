@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
+// import App from './App';
 import ButtonTry from './ButtonTry';
+// import Square from './Square';
+import FlipCard from './FlipCard';
 import reportWebVitals from './reportWebVitals';
-
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ButtonTry value={"Hello World"}/>
-    <App />
+    {/* <Square/> */}
+    <FlipCard name={"Jesus"} value={"3.14"}/>
+    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
