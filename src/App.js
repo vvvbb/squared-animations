@@ -1,31 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Square from "./Square";
+import ButtonTry from "./ButtonTry";
+import FlipCard from "./FlipCard";
+import CounterFunction from "./Counter";
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit this 1 <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ButtonTry value={"Hello World"}/>
+      <div className="my-5 border border-warning"></div>
+      <FlipCard name={"Jesus"} value={"3.14"} />
+      <div className="my-5 border border-warning"></div>
+      <CounterFunction/>
+      <div className="my-5 border border-warning"></div>
+      <Square />
     </div>
-
-
-/* 
- for (let i=0;i<10;i++){
-  console.log(i);
-} */
- 
   );
 }
 
