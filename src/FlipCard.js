@@ -7,7 +7,7 @@ const FlipCard = (props) => {
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img
-            src="https://picsum.photos/300/300?random=1"
+            src="https://picsum.photos/400/400?random=1"
             alt="lorem"
             className="m-auto"
           />
