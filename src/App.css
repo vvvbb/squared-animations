@@ -1,13 +1,38 @@
 .App {
+  background-color: darkorchid;
+  background-color: #add8e6;
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
   text-align: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
   grid-auto-rows: minmax(100px, auto);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  outline: 2px double red;
+}
+
+@media screen and (min-width: 992px) {
+  .App {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .App {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 /*# sourceMappingURL=App.css.map */

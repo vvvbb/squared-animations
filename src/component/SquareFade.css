@@ -1,0 +1,81 @@
+.outsideBlock--Fade {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.outsideBlock--Fade img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.outsideBlock--Fade .insideBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: opacity 0.6s ease-out, -webkit-box-shadow 0.3s;
+  transition: opacity 0.6s ease-out, -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s, opacity 0.6s ease-out;
+  transition: box-shadow 0.3s, opacity 0.6s ease-out, -webkit-box-shadow 0.3s;
+  -webkit-box-shadow: 0px 0px 0 0rem rgba(255, 255, 255, 0.8) inset;
+          box-shadow: 0px 0px 0 0rem rgba(255, 255, 255, 0.8) inset;
+  position: absolute;
+  z-index: 1;
+  outline-offset: -1rem;
+  outline-offset: -2rem;
+  outline: 0.25rem solid rgba(255, 255, 255, 0.8);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.outsideBlock--Fade h3, .outsideBlock--Fade p {
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  padding: 0.25rem 0;
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: margin 0.3s, opacity 0.2s;
+  transition: margin 0.3s, opacity 0.2s;
+}
+
+.outsideBlock--Fade:hover img {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.outsideBlock--Fade:hover .insideBlock {
+  outline-offset: 0rem;
+  -webkit-box-shadow: 0px 0px 0 calc( 2rem - 0.25rem) rgba(255, 255, 255, 0.8) inset;
+          box-shadow: 0px 0px 0 calc( 2rem - 0.25rem) rgba(255, 255, 255, 0.8) inset;
+  opacity: 0;
+}
+
+.outsideBlock--Fade:hover h3, .outsideBlock--Fade:hover p {
+  margin-top: 20%;
+  opacity: 0;
+}
+/*# sourceMappingURL=SquareFade.css.map */

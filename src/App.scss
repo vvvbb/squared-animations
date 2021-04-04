@@ -1,9 +1,27 @@
 .App {
+  background-color: darkorchid;
+
+  background-color: #add8e6;
+
+  width: 100%;
+  @media screen and (min-width: 992px) {
+    width: 90%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 80%;
+  }
+
+  min-height: 100vh;
+
+  margin: auto;
   text-align: center;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  @media screen and (min-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  gap: 1em;
   grid-auto-rows: minmax(100px, auto);
   align-items: center;
 }

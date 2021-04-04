@@ -1,0 +1,152 @@
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  cursor: pointer;
+
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  // border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  // background-color: #bbb;
+  color: black;
+  img {
+    position: absolute;
+    z-index: -1;
+  }
+  h3,
+  p {
+    // background-color: gainsboro;
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    margin: 0 auto;
+  }
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: gainsboro;
+  color: white;
+  transform: rotateY(180deg);
+  img {
+    opacity: 0.6;
+  }
+}
+
+// $$$$$$$$\ $$\       $$$$$$\ $$$$$$$\         $$$$$$\   $$$$$$\  $$$$$$$\  $$$$$$$\
+// $$  _____|$$ |      \_$$  _|$$  __$$\       $$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\
+// $$ |      $$ |        $$ |  $$ |  $$ |      $$ /  \__|$$ /  $$ |$$ |  $$ |$$ |  $$ |
+// $$$$$\    $$ |        $$ |  $$$$$$$  |      $$ |      $$$$$$$$ |$$$$$$$  |$$ |  $$ |
+// $$  __|   $$ |        $$ |  $$  ____/       $$ |      $$  __$$ |$$  __$$< $$ |  $$ |
+// $$ |      $$ |        $$ |  $$ |            $$ |  $$\ $$ |  $$ |$$ |  $$ |$$ |  $$ |
+// $$ |      $$$$$$$$\ $$$$$$\ $$ |            \$$$$$$  |$$ |  $$ |$$ |  $$ |$$$$$$$  |
+// \__|      \________|\______|\__|             \______/ \__|  \__|\__|  \__|\_______/
+
+$offset-margin: 2rem;
+$outline-thick: 0.25rem;
+
+$color-inner: rgba(
+  $color: #ffffff,
+  $alpha: 0.8,
+);
+$color-border: rgba(
+  $color: #ffffff,
+  $alpha: 0.8,
+);
+
+.outsideBlock--Flip {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+  width: 100%;
+  max-width: 400px;
+
+  margin: auto;
+
+  img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+
+    transition: all 0.3s;
+    transition: transform 0.5s ease-out;
+  }
+
+  .insideBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+    transition: all 0.3s;
+
+    box-shadow: 0px 0px 0 0rem $color-border inset;
+
+    position: absolute;
+    z-index: 1;
+
+    outline-offset: -1rem; //new on 2.2.21
+    outline-offset: -$offset-margin;
+
+    outline: $outline-thick solid $color-inner;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // padding: 1.5rem 2rem;
+  }
+
+  h3,
+  p {
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    padding: 0.25rem 0; //new on 2.2.21
+    margin: $offset-margin; //new on 2.2.21
+    background-color: $color-inner;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    .insideBlock {
+      outline-offset: 0rem;
+      box-shadow: 0px 0px 0 calc(#{$offset-margin} - #{$outline-thick})
+        $color-border inset; //new on 2.2.21
+    }
+    p,
+    h3 {
+      opacity: 0;
+    }
+  }
+}

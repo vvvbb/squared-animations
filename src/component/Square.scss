@@ -21,6 +21,8 @@ $color-border : rgba($color: #ffffff, $alpha: 0.8);
     max-height: 100%;
 
     transition: all 0.3s;
+    transition: transform 0.5s ease-out;
+
   }
 
   .insideBlock {
@@ -57,6 +59,7 @@ $color-border : rgba($color: #ffffff, $alpha: 0.8);
     margin: $offset-margin; //new on 2.2.21
     background-color: $color-inner;
   }
+  
 }
 
 .outsideBlock:hover {
