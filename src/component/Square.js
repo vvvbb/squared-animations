@@ -9,7 +9,8 @@ class Square extends Component {
       <div className="outsideBlock">
         <div className="insideBlock">
             <h3>{this.props.name} never lose</h3>
-            <p>{this.props.name} either win or {this.props.name} learn</p>
+            <p>{this.props.name} either win</p>
+            <p>or {this.props.name} learn</p>
         </div>
         <img className="" src="https://picsum.photos/600/600?random=2" alt="" />
       </div>
