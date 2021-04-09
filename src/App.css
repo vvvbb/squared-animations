@@ -14,7 +14,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  outline: 2px double red;
 }
 
 @media screen and (min-width: 992px) {

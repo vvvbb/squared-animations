@@ -20,6 +20,9 @@ import Button from 'react-bootstrap/Button';
 
 class ButtonTry extends Component {
   render() {
+    let a = 2;
+    // let a = sum([x*x for x in [1,2,3]]);
+    console.log(a);
     return (
       <Button
         className="square d-flex m-auto btn-info"
